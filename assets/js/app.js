@@ -95,3 +95,14 @@ window.addEventListener('keydown', (e) => {
   if (!mod && e.key.toLowerCase() === 't') { toggleTheme(); return; }
   if (currentView === 'reader' && viewer.handleKey(e)) e.preventDefault();
 });
+
+
+// Abrir PDF direto do sistema ("Abrir com" → Leitor PDF). Chrome/Edge no computador.
+if ('launchQueue' in window) {
+  window.launchQueue.setConsumer(async (params) => {
+    if (!params.files?.length) return;
+    const file = await params.files[0].getFile();
+    showView('reader');
+    viewer.open(file, file.name);
+  });
+}
