@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Leitor PDF online grátis, sem anúncios + Imagem para PDF</title>
+  <meta name="description" content="Leitor de PDF online, grátis e sem anúncios. Zoom, tema claro e escuro, ir para a página, busca de texto e conversão de fotos e imagens em PDF. Seus arquivos não saem do seu dispositivo.">
+  <meta name="keywords" content="leitor de pdf, ler pdf online, pdf sem anúncios, imagem para pdf, jpg para pdf, foto para pdf, converter imagem em pdf, visualizador de pdf">
+  <meta name="author" content="Leitor PDF">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://SEU-DOMINIO.vercel.app/">
+
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/img/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Leitor PDF">
+  <meta property="og:title" content="Leitor PDF: leia PDFs e converta imagens em PDF, sem anúncios">
+  <meta property="og:description" content="Leitor de PDF gratuito, rápido e privado. Tema claro e escuro, zoom, busca e conversor de imagem para PDF.">
+  <meta property="og:url" content="https://SEU-DOMINIO.vercel.app/">
+  <meta property="og:image" content="https://SEU-DOMINIO.vercel.app/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Leitor PDF: leia PDFs e converta imagens em PDF, sem anúncios">
+  <meta name="twitter:description" content="Leitor de PDF gratuito, rápido e privado. Tema claro e escuro, zoom, busca e conversor de imagem para PDF.">
+  <meta name="twitter:image" content="https://SEU-DOMINIO.vercel.app/assets/img/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Leitor PDF",
+    "url": "https://SEU-DOMINIO.vercel.app/",
+    "description": "Leitor de PDF online, gratuito e sem anúncios, com conversor de imagem para PDF. Tudo roda no navegador.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Qualquer sistema com navegador moderno",
+    "inLanguage": "pt-BR",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+    "featureList": [
+      "Leitura de PDF com zoom",
+      "Tema claro e escuro",
+      "Ir direto para uma página",
+      "Miniaturas redimensionáveis",
+      "Busca de texto",
+      "Conversão de imagem para PDF"
+    ]
+  }
+  </script>
+
+  <script src="/assets/js/theme-init.js"></script>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+
+<!-- Ícones (sprite SVG) -->
+<svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true">
+  <symbol id="i-logo" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M10 7h8l5 5v13a1 1 0 0 1-1 1H10a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z" fill="#fff"/><path d="M18 7v5h5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" opacity=".55"/><path d="M12.5 17h7M12.5 20.5h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sidebar" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></symbol>
+  <symbol id="i-up" viewBox="0 0 24 24"><path d="m18 15-6-6-6 6"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-zoom-in" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M11 8v6M8 11h6"/></symbol>
+  <symbol id="i-zoom-out" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8 11h6"/></symbol>
+  <symbol id="i-rotate" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+  <symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 21h16"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5M4 20h16"/></symbol>
+  <symbol id="i-print" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1h-2"/><rect x="6" y="14" width="12" height="7"/></symbol>
+  <symbol id="i-maximize" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M18 11V6a2 2 0 0 0-4 0M14 10V4a2 2 0 0 0-4 0v2M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-5.9-2.4L3.4 16a2 2 0 0 1 3.2-2.4L8 15"/></symbol>
+  <symbol id="i-cursor" viewBox="0 0 24 24"><path d="M17 22h-1a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h1M7 22h1a4 4 0 0 0 4-4v-1M7 2h1a4 4 0 0 1 4 4v1"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></symbol>
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6M10 11v6M14 11v6"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></symbol>
+  <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9z"/></symbol>
+  <symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m4.9 4.9 14.2 14.2"/></symbol>
+</svg>
+
+<header class="topbar">
+  <a class="brand" href="/" aria-label="Leitor PDF, página inicial">
+    <svg class="brand-logo" aria-hidden="true"><use href="#i-logo"/></svg>
+    <span class="brand-name">Leitor <b>PDF</b></span>
+  </a>
+
+  <nav class="tabs" role="tablist" aria-label="Ferramentas">
+    <button class="tab is-active" role="tab" id="tab-reader" data-view="reader" aria-selected="true" aria-controls="view-reader">
+      <svg class="i" aria-hidden="true"><use href="#i-file"/></svg><span>Ler PDF</span>
+    </button>
+    <button class="tab" role="tab" id="tab-converter" data-view="converter" aria-selected="false" aria-controls="view-converter">
+      <svg class="i" aria-hidden="true"><use href="#i-image"/></svg><span>Imagem <span class="arrow">→</span> PDF</span>
+    </button>
+  </nav>
+
+  <div class="topbar-actions">
+    <button class="icon-btn" id="btnHelp" type="button" title="Atalhos de teclado (?)" aria-label="Atalhos de teclado">
+      <svg class="i" aria-hidden="true"><use href="#i-help"/></svg>
+    </button>
+    <button class="icon-btn" id="btnTheme" type="button" title="Alternar tema claro/escuro" aria-label="Alternar tema claro ou escuro">
+      <svg class="i icon-moon" aria-hidden="true"><use href="#i-moon"/></svg>
+      <svg class="i icon-sun" aria-hidden="true"><use href="#i-sun"/></svg>
+    </button>
+  </div>
+</header>
+
+<main class="views">
+
+  <!-- ============ LEITOR ============ -->
+  <section class="view is-active" id="view-reader" role="tabpanel" aria-labelledby="tab-reader">
+
+    <div class="toolbar" id="toolbar" role="toolbar" aria-label="Controles do leitor" hidden>
+      <div class="group">
+        <button class="icon-btn" id="btnSidebar" type="button" title="Miniaturas" aria-label="Mostrar ou ocultar miniaturas" aria-pressed="true">
+          <svg class="i" aria-hidden="true"><use href="#i-sidebar"/></svg>
+        </button>
+      </div>
+
+      <div class="group">
+        <button class="icon-btn" id="btnPrev" type="button" title="Página anterior" aria-label="Página anterior">
+          <svg class="i" aria-hidden="true"><use href="#i-up"/></svg>
+        </button>
+        <label class="page-box" title="Digite o número da página e aperte Enter">
+          <span class="sr-only">Página atual</span>
+          <input id="pageInput" type="text" inputmode="numeric" autocomplete="off" value="1" aria-label="Número da página">
+          <span class="page-total">/ <span id="pageTotal">0</span></span>
+        </label>
+        <button class="icon-btn" id="btnNext" type="button" title="Próxima página" aria-label="Próxima página">
+          <svg class="i" aria-hidden="true"><use href="#i-down"/></svg>
+        </button>
+      </div>
+
+      <div class="group">
+        <button class="icon-btn" id="btnZoomOut" type="button" title="Diminuir zoom (-)" aria-label="Diminuir zoom">
+          <svg class="i" aria-hidden="true"><use href="#i-zoom-out"/></svg>
+        </button>
+        <select id="zoomSelect" class="select" aria-label="Nível de zoom">
+          <option value="width">Ajustar à largura</option>
+          <option value="page">Página inteira</option>
+          <option value="0.5">50%</option>
+          <option value="0.75">75%</option>
+          <option value="1">100%</option>
+          <option value="1.25">125%</option>
+          <option value="1.5">150%</option>
+          <option value="2">200%</option>
+          <option value="3">300%</option>
+          <option value="4">400%</option>
+        </select>
+        <button class="icon-btn" id="btnZoomIn" type="button" title="Aumentar zoom (+)" aria-label="Aumentar zoom">
+          <svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>
+        </button>
+      </div>
+
+      <div class="group">
+        <button class="icon-btn" id="btnRotate" type="button" title="Girar página (R)" aria-label="Girar páginas">
+          <svg class="i" aria-hidden="true"><use href="#i-rotate"/></svg>
+        </button>
+        <button class="icon-btn" id="btnTool" type="button" title="Ferramenta mão: arrastar o documento (H)" aria-label="Alternar entre selecionar texto e arrastar com a mão" aria-pressed="false">
+          <svg class="i" aria-hidden="true"><use href="#i-hand"/></svg>
+        </button>
+        <button class="icon-btn" id="btnSearch" type="button" title="Buscar no documento (Ctrl+F)" aria-label="Buscar no documento">
+          <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+        </button>
+        <button class="icon-btn" id="btnInvert" type="button" title="Páginas escuras (inverter cores)" aria-label="Inverter cores das páginas" aria-pressed="false">
+          <svg class="i" aria-hidden="true"><use href="#i-contrast"/></svg>
+        </button>
+      </div>
+
+      <div class="group group-end">
+        <button class="icon-btn" id="btnOpen" type="button" title="Abrir outro PDF (Ctrl+O)" aria-label="Abrir outro PDF">
+          <svg class="i" aria-hidden="true"><use href="#i-upload"/></svg>
+        </button>
+        <button class="icon-btn" id="btnDownload" type="button" title="Baixar PDF" aria-label="Baixar PDF">
+          <svg class="i" aria-hidden="true"><use href="#i-download"/></svg>
+        </button>
+        <button class="icon-btn" id="btnPrint" type="button" title="Imprimir" aria-label="Imprimir">
+          <svg class="i" aria-hidden="true"><use href="#i-print"/></svg>
+        </button>
+        <button class="icon-btn" id="btnFullscreen" type="button" title="Tela cheia (F)" aria-label="Tela cheia">
+          <svg class="i" aria-hidden="true"><use href="#i-maximize"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="searchbar" id="searchbar" hidden>
+      <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+      <input id="searchInput" type="search" placeholder="Buscar no documento" autocomplete="off" aria-label="Buscar no documento">
+      <span class="search-count" id="searchCount" aria-live="polite"></span>
+      <button class="icon-btn" id="searchPrev" type="button" title="Resultado anterior (Shift+Enter)" aria-label="Resultado anterior"><svg class="i" aria-hidden="true"><use href="#i-up"/></svg></button>
+      <button class="icon-btn" id="searchNext" type="button" title="Próximo resultado (Enter)" aria-label="Próximo resultado"><svg class="i" aria-hidden="true"><use href="#i-down"/></svg></button>
+      <button class="icon-btn" id="searchClose" type="button" title="Fechar busca (Esc)" aria-label="Fechar busca"><svg class="i" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </div>
+
+    <div class="reader-body" id="readerBody">
+      <aside class="sidebar" id="sidebar" aria-label="Miniaturas das páginas" hidden>
+        <div class="thumbs" id="thumbs"></div>
+      </aside>
+      <div class="resizer" id="resizer" role="separator" aria-orientation="vertical" aria-label="Arraste para redimensionar a lateral" tabindex="0" hidden></div>
+
+      <div class="scroller" id="scroller" tabindex="0">
+        <div id="pages" class="pages" hidden></div>
+
+        <div class="empty" id="empty">
+          <div class="drop" id="dropReader">
+            <div class="drop-icon"><svg class="i i-xl" aria-hidden="true"><use href="#i-file"/></svg></div>
+            <h1>Leitor de PDF online, sem anúncios</h1>
+            <p class="lead">Abra um PDF para ler com zoom, miniaturas, busca e tema escuro. Tudo acontece no seu navegador.</p>
+            <div class="drop-actions">
+              <button class="btn btn-primary" id="btnPick" type="button"><svg class="i" aria-hidden="true"><use href="#i-upload"/></svg>Abrir PDF</button>
+              <button class="btn" id="btnGoConverter" type="button"><svg class="i" aria-hidden="true"><use href="#i-image"/></svg>Converter imagem em PDF</button>
+            </div>
+            <p class="hint">ou arraste e solte o arquivo aqui <span class="hint-kbd"><span class="dot">•</span> <kbd>Ctrl</kbd>+<kbd>O</kbd></span></p>
+          </div>
+
+          <ul class="features" aria-label="Destaques">
+            <li><svg class="i" aria-hidden="true"><use href="#i-ban"/></svg><div><b>Sem anúncios</b><span>Nada de banners, pop-ups ou cadastro.</span></div></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg><div><b>Privado de verdade</b><span>O arquivo não é enviado para nenhum servidor.</span></div></li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg><div><b>Rápido e leve</b><span>Páginas carregam sob demanda, até em PDFs grandes.</span></div></li>
+          </ul>
+
+          <section class="about">
+            <h2>Como usar o Leitor PDF</h2>
+            <p>Clique em <b>Abrir PDF</b> ou arraste o arquivo para a página. Use a barra de ferramentas para dar zoom, girar, buscar palavras e pular direto para uma página digitando o número dela. A lateral com miniaturas pode ser aberta, fechada e redimensionada arrastando a borda.</p>
+            <p>Precisa enviar uma foto como PDF? Na aba <b>Imagem → PDF</b> você junta várias imagens ou fotos tiradas na hora, organiza a ordem e baixa um único arquivo PDF.</p>
+            <h2>Perguntas frequentes</h2>
+            <details><summary>Meus arquivos são enviados para a internet?</summary><p>Não. A leitura e a conversão acontecem localmente, no seu navegador. Nenhum arquivo sai do seu dispositivo.</p></details>
+            <details><summary>Preciso pagar ou criar conta?</summary><p>Não. O Leitor PDF é gratuito, não tem anúncios e não pede cadastro.</p></details>
+            <details><summary>Funciona no celular?</summary><p>Sim. O layout se adapta a telas pequenas, e na conversão você pode tirar a foto direto pela câmera.</p></details>
+            <details><summary>Quais imagens posso converter em PDF?</summary><p>JPG, PNG, WebP e outros formatos que o seu navegador consiga abrir. Você escolhe tamanho de página, margens e qualidade.</p></details>
+          </section>
+        </div>
+
+        <div class="loading" id="loading" hidden>
+          <div class="spinner" aria-hidden="true"></div>
+          <span id="loadingText">Abrindo PDF…</span>
+        </div>
+      </div>
+    </div>
+
+    <input type="file" id="fileInput" accept="application/pdf,.pdf" hidden>
+  </section>
+
+  <!-- ============ CONVERSOR ============ -->
+  <section class="view" id="view-converter" role="tabpanel" aria-labelledby="tab-converter" hidden>
+    <div class="converter">
+      <div class="conv-head">
+        <h2>Converter imagem em PDF</h2>
+        <p>Junte fotos e imagens em um único PDF. Funciona offline no seu navegador, nada é enviado.</p>
+      </div>
+
+      <div class="drop drop-small" id="dropConv">
+        <div class="drop-actions">
+          <button class="btn btn-primary" id="btnAddImages" type="button"><svg class="i" aria-hidden="true"><use href="#i-image"/></svg>Escolher imagens</button>
+          <button class="btn" id="btnCamera" type="button"><svg class="i" aria-hidden="true"><use href="#i-camera"/></svg>Tirar foto</button>
+        </div>
+        <p class="hint">ou arraste as imagens para cá</p>
+      </div>
+
+      <input type="file" id="imgInput" accept="image/*" multiple hidden>
+      <input type="file" id="camInput" accept="image/*" capture="environment" hidden>
+
+      <div class="conv-grid" id="convGrid" hidden>
+        <div class="conv-main">
+          <div class="conv-toolbar">
+            <strong id="convCount">0 imagens</strong>
+            <span class="muted">Arraste os cartões ou use as setas para mudar a ordem.</span>
+            <button class="btn btn-ghost btn-sm" id="btnClear" type="button"><svg class="i" aria-hidden="true"><use href="#i-trash"/></svg>Limpar tudo</button>
+          </div>
+          <ol class="cards" id="cards"></ol>
+        </div>
+
+        <aside class="conv-side" aria-label="Opções do PDF">
+          <h3>Opções</h3>
+          <label class="field"><span>Nome do arquivo</span>
+            <input class="input" id="optName" type="text" value="imagens" maxlength="80" autocomplete="off">
+          </label>
+          <label class="field"><span>Tamanho da página</span>
+            <select class="select select-block" id="optSize">
+              <option value="auto">Ajustar à imagem</option>
+              <option value="a4" selected>A4</option>
+              <option value="letter">Carta (Letter)</option>
+            </select>
+          </label>
+          <label class="field" id="fieldOrient"><span>Orientação</span>
+            <select class="select select-block" id="optOrient">
+              <option value="auto" selected>Automática</option>
+              <option value="portrait">Retrato</option>
+              <option value="landscape">Paisagem</option>
+            </select>
+          </label>
+          <label class="field"><span>Margens</span>
+            <select class="select select-block" id="optMargin">
+              <option value="0" selected>Sem margem</option>
+              <option value="18">Pequena</option>
+              <option value="36">Média</option>
+            </select>
+          </label>
+          <label class="field"><span>Qualidade</span>
+            <select class="select select-block" id="optQuality">
+              <option value="high">Alta (arquivo maior)</option>
+              <option value="medium" selected>Equilibrada</option>
+              <option value="low">Pequena (para enviar por e-mail)</option>
+            </select>
+          </label>
+          <button class="btn btn-primary btn-block" id="btnMake" type="button"><svg class="i" aria-hidden="true"><use href="#i-file"/></svg>Gerar PDF</button>
+
+          <div class="result" id="result" hidden>
+            <div class="result-info"><svg class="i" aria-hidden="true"><use href="#i-file"/></svg><div><b id="resultName">imagens.pdf</b><span id="resultMeta">—</span></div></div>
+            <div class="result-actions">
+              <button class="btn btn-primary" id="btnResDownload" type="button"><svg class="i" aria-hidden="true"><use href="#i-download"/></svg>Baixar</button>
+              <button class="btn" id="btnResShare" type="button" hidden><svg class="i" aria-hidden="true"><use href="#i-share"/></svg>Compartilhar</button>
+              <button class="btn" id="btnResOpen" type="button"><svg class="i" aria-hidden="true"><use href="#i-file"/></svg>Abrir no leitor</button>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="drop-overlay" id="dropOverlay" hidden><div>Solte o arquivo para abrir</div></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<!-- Senha do PDF -->
+<dialog id="pwdDialog" class="dialog">
+  <form method="dialog" id="pwdForm">
+    <h3><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>PDF protegido por senha</h3>
+    <p id="pwdMsg">Digite a senha para abrir este documento.</p>
+    <input class="input" id="pwdInput" type="password" autocomplete="off" aria-label="Senha do PDF">
+    <div class="dialog-actions">
+      <button class="btn" value="cancel" type="submit" id="pwdCancel">Cancelar</button>
+      <button class="btn btn-primary" value="ok" type="submit">Abrir</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- Atalhos -->
+<dialog id="helpDialog" class="dialog">
+  <form method="dialog">
+    <h3><svg class="i" aria-hidden="true"><use href="#i-help"/></svg>Atalhos de teclado</h3>
+    <dl class="shortcuts">
+      <div><dt><kbd>Ctrl</kbd>+<kbd>O</kbd></dt><dd>Abrir PDF</dd></div>
+      <div><dt><kbd>←</kbd> <kbd>→</kbd></dt><dd>Página anterior / próxima</dd></div>
+      <div><dt><kbd>Home</kbd> <kbd>End</kbd></dt><dd>Primeira / última página</dd></div>
+      <div><dt><kbd>Ctrl</kbd>+<kbd>G</kbd></dt><dd>Ir para a página</dd></div>
+      <div><dt><kbd>+</kbd> <kbd>-</kbd></dt><dd>Aumentar / diminuir zoom</dd></div>
+      <div><dt><kbd>0</kbd></dt><dd>Ajustar à largura</dd></div>
+      <div><dt><kbd>Ctrl</kbd>+<kbd>Scroll</kbd></dt><dd>Zoom com o mouse</dd></div>
+      <div><dt><kbd>Ctrl</kbd>+<kbd>F</kbd></dt><dd>Buscar no documento</dd></div>
+      <div><dt><kbd>R</kbd></dt><dd>Girar páginas</dd></div>
+      <div><dt><kbd>H</kbd></dt><dd>Ferramenta mão (arrastar)</dd></div>
+      <div><dt><kbd>F</kbd></dt><dd>Tela cheia</dd></div>
+      <div><dt><kbd>T</kbd></dt><dd>Tema claro / escuro</dd></div>
+    </dl>
+    <div class="dialog-actions"><button class="btn btn-primary" value="ok">Fechar</button></div>
+  </form>
+</dialog>
+
+<noscript><p class="noscript">O Leitor PDF precisa de JavaScript ativado para funcionar.</p></noscript>
+
+<script src="/assets/vendor/pdf-lib/pdf-lib.min.js" defer></script>
+<script type="module" src="/assets/js/app.js"></script>
+</body>
+</html>
